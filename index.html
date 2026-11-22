@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172d2b">
+  <meta name="description" content="The personal portfolio of Hafiz Abdullah Khalid Khan Leghari Baloch — retired Senior Joint Director, Pakistan Airports Authority.">
+  <title>Hafiz Abdullah Khalid Khan Leghari Baloch | Personal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #172d2b;
+      --forest-2: #24413b;
+      --sand: #f4efe4;
+      --paper: #fffdf8;
+      --rust: #b66b43;
+      --gold: #c7a66a;
+      --ink: #23312d;
+      --muted: #6d7770;
+      --line: rgba(35,49,45,.13);
+      --shadow: 0 22px 60px rgba(25,39,34,.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--sand); font-family: "DM Sans", sans-serif; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    .topbar { background: var(--forest); color: #f8f1e4; padding: 13px 6vw; display: flex; justify-content: space-between; align-items: center; gap: 18px; font-size: .82rem; letter-spacing: .06em; }
+    .topbar span:last-child { color: #d7c49e; }
+    header { position: relative; overflow: hidden; background: var(--forest); color: #fffaf0; padding: 26px 6vw 92px; }
+    header:before, header:after { content: ""; position: absolute; border: 1px solid rgba(211,185,137,.17); border-radius: 50%; pointer-events: none; }
+    header:before { width: 520px; height: 520px; right: -170px; top: -270px; }
+    header:after { width: 390px; height: 390px; right: -105px; top: -205px; }
+    nav { max-width: 1180px; margin: auto; display: flex; justify-content: space-between; align-items: center; gap: 24px; position: relative; z-index: 1; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .04em; }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--gold); color: var(--gold); transform: rotate(45deg); }
+    .brand-mark span { transform: rotate(-45deg); font-family: Georgia, serif; font-size: 1.1rem; }
+    .navlinks { display: flex; gap: 27px; color: #e2e2d6; font-size: .9rem; }
+    .navlinks a:hover { color: var(--gold); }
+    .hero { max-width: 1180px; margin: 78px auto 0; display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 60px; position: relative; z-index: 1; }
+    .eyebrow { text-transform: uppercase; color: var(--gold); letter-spacing: .22em; font-size: .72rem; font-weight: 700; }
+    h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 600; line-height: 1.14; }
+    h1 { font-size: clamp(2.65rem, 5.3vw, 5rem); margin: 18px 0 22px; max-width: 760px; }
+    h1 span { color: #d4b77e; }
+    .hero-copy { max-width: 610px; color: #d9dfd6; font-size: 1.05rem; }
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; margin-top: 30px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; padding: 13px 21px; border-radius: 3px; font-weight: 700; font-size: .9rem; transition: .2s ease; }
+    .btn-primary { background: var(--gold); color: #1b2b27; }
+    .btn-primary:hover { background: #dfc48f; transform: translateY(-2px); }
+    .btn-outline { border: 1px solid rgba(255,255,255,.4); color: #fffaf0; }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .portrait-wrap { justify-self: end; width: min(100%, 365px); position: relative; }
+    .portrait-frame { padding: 12px; border: 1px solid rgba(207,177,119,.6); position: relative; }
+    .portrait { min-height: 405px; width: 100%; background: linear-gradient(145deg,#38564c,#1d3833); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #e7dcc4; padding: 24px; overflow: hidden; position: relative; }
+    .portrait:before { content: ""; position: absolute; inset: 15px; border: 1px dashed rgba(220,194,144,.35); }
+    .portrait svg { width: 62px; height: 62px; margin-bottom: 18px; opacity: .85; }
+    .portrait strong { font-family: "Playfair Display",serif; font-size: 1.35rem; position: relative; }
+    .portrait small { margin-top: 9px; color: #c9d0c4; position: relative; }
+    .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
+    .photo-note { color: #c6cdbf; font-size: .72rem; text-align: center; margin-top: 12px; }
+    .hero-bottom { max-width: 1180px; margin: 65px auto 0; border-top: 1px solid rgba(255,255,255,.17); padding-top: 23px; display: flex; gap: 36px; flex-wrap: wrap; color: #d7dfd4; font-size: .86rem; }
+    .hero-bottom b { color: var(--gold); display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 3px; }
+    main { max-width: 1180px; margin: auto; padding: 0 6vw; }
+    section { padding: 88px 0; }
+    .section-heading { max-width: 650px; margin-bottom: 38px; }
+    .section-heading h2 { font-size: clamp(2rem, 4vw, 3.25rem); margin: 12px 0; color: var(--forest); }
+    .section-heading p { color: var(--muted); margin: 0; }
+    .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 55px; align-items: start; }
+    .quote-panel { background: var(--forest); color: #f6efdf; padding: 36px; min-height: 280px; position: relative; overflow: hidden; }
+    .quote-panel:after { content: "❧"; position: absolute; font-size: 9rem; color: rgba(203,174,119,.13); right: 13px; bottom: -42px; }
+    .quote-panel .quote-mark { color: var(--gold); font: 4rem Georgia,serif; line-height: .8; }
+    .quote-panel p { font: 1.45rem/1.5 "Playfair Display",serif; position: relative; z-index: 1; }
+    .quote-panel small { color: #c5cdbf; letter-spacing: .12em; text-transform: uppercase; font-size: .7rem; }
+    .bio-text p { color: #59665f; margin-top: 0; }
+    .bio-text p + p { margin-top: 16px; }
+    .details { display: grid; grid-template-columns: 1fr 1fr; gap: 0 25px; margin-top: 25px; border-top: 1px solid var(--line); }
+    .detail { padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .detail small { display: block; color: var(--rust); text-transform: uppercase; font-size: .68rem; letter-spacing: .12em; font-weight: 700; }
+    .detail strong { display: block; margin-top: 4px; font-size: .94rem; font-weight: 600; }
+    .career { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .career-inner { max-width: 1180px; margin: auto; padding: 78px 6vw; display: grid; grid-template-columns: .8fr 1.2fr; gap: 65px; align-items: center; }
+    .career h2 { font-size: clamp(2rem, 4vw, 3.2rem); color: var(--forest); margin: 12px 0 18px; }
+    .career p { color: var(--muted); }
+    .career-card { border-left: 3px solid var(--rust); padding: 25px 28px; background: #f7f3eb; }
+    .career-card small { text-transform: uppercase; letter-spacing: .14em; color: var(--rust); font-size: .7rem; font-weight: 700; }
+    .career-card h3 { font-size: 1.7rem; color: var(--forest); margin: 10px 0; }
+    .career-card p { margin: 0; }
+    .heritage-intro { display: flex; justify-content: space-between; gap: 30px; align-items: end; }
+    .heritage-intro .section-heading { margin-bottom: 35px; }
+    .heritage-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .heritage-card { min-height: 235px; padding: 27px; background: var(--paper); border: 1px solid var(--line); position: relative; overflow: hidden; transition: .25s; }
+    .heritage-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .heritage-card .number { color: var(--rust); font-size: .73rem; font-weight: 700; letter-spacing: .15em; }
+    .heritage-card h3 { font-size: 1.45rem; color: var(--forest); margin: 24px 0 10px; }
+    .heritage-card p { color: var(--muted); font-size: .9rem; margin: 0; }
+    .heritage-card:after { content: ""; position: absolute; width: 95px; height: 95px; border: 1px solid rgba(182,107,67,.16); border-radius: 50%; right: -42px; bottom: -42px; }
+    .family { background: var(--forest); color: #f7f1e4; }
+    .family-inner { max-width: 1180px; margin: auto; padding: 78px 6vw; }
+    .family .section-heading h2 { color: #f7f1e4; }
+    .family .section-heading p { color: #c7d0c6; }
+    .family-card { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .family-item { padding: 25px 28px; border: 1px solid rgba(218,195,150,.3); background: rgba(255,255,255,.035); }
+    .family-item small { color: var(--gold); text-transform: uppercase; letter-spacing: .15em; font-size: .7rem; font-weight: 700; }
+    .family-item h3 { font-size: 1.45rem; margin: 9px 0 0; }
+    .contact { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 35px; background: #e9e0ce; padding: 40px; }
+    .contact h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); color: var(--forest); margin: 10px 0; }
+    .contact p { color: #647168; margin: 0; }
+    .contact .btn { white-space: nowrap; }
+    footer { background: #10221f; color: #bac5b9; padding: 26px 6vw; text-align: center; font-size: .8rem; }
+    footer span { color: var(--gold); }
+    .whatsapp { position: fixed; right: 22px; bottom: 22px; z-index: 10; width: 61px; height: 61px; display: grid; place-items: center; border-radius: 50%; background: #20c66b; color: white; box-shadow: 0 8px 25px rgba(0,0,0,.23); transition: .2s; }
+    .whatsapp:hover { transform: translateY(-4px) scale(1.04); background: #18ad5b; }
+    .whatsapp svg { width: 30px; height: 30px; fill: currentColor; }
+    @media (max-width: 800px) {
+      .navlinks { gap: 14px; font-size: .82rem; }
+      .hero { grid-template-columns: 1fr .75fr; gap: 25px; margin-top: 55px; }
+      .portrait { min-height: 330px; }
+      .about-grid, .career-inner { grid-template-columns: 1fr; gap: 30px; }
+      .heritage-grid { grid-template-columns: repeat(2,1fr); }
+      .career-inner { padding-top: 65px; padding-bottom: 65px; }
+    }
+    @media (max-width: 560px) {
+      .topbar { padding: 11px 5vw; font-size: .68rem; }
+      header { padding: 20px 5vw 60px; }
+      nav { align-items: flex-start; }
+      .brand { font-size: .82rem; }
+      .navlinks { gap: 12px; flex-wrap: wrap; justify-content: flex-end; font-size: .75rem; }
+      .navlinks a:nth-child(3) { display: none; }
+      .hero { grid-template-columns: 1fr; margin-top: 52px; gap: 34px; }
+      h1 { font-size: clamp(2.55rem, 12vw, 3.6rem); }
+      .hero-copy { font-size: .95rem; }
+      .portrait-wrap { justify-self: center; width: min(100%, 310px); }
+      .portrait { min-height: 340px; }
+      .hero-bottom { gap: 20px; margin-top: 42px; }
+      main { padding: 0 5vw; }
+      section { padding: 65px 0; }
+      .details { grid-template-columns: 1fr; }
+      .heritage-grid { grid-template-columns: 1fr; }
+      .heritage-card { min-height: 190px; }
+      .family-inner { padding: 65px 5vw; }
+      .family-card { grid-template-columns: 1fr; }
+      .contact { grid-template-columns: 1fr; padding: 28px 23px; }
+      .contact .btn { justify-self: start; }
+      .whatsapp { width: 56px; height: 56px; right: 16px; bottom: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span>PERSONAL PROFILE · LEGHARI BALOCH</span>
+    <span>A tribute to heritage, service & family</span>
+  </div>
+
+  <header id="home">
+    <nav>
+      <a class="brand" href="#home"><span class="brand-mark"><span>ع</span></span><span>H.A.K. LEGHARI BALOCH</span></a>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#career">Career</a>
+        <a href="#heritage">Heritage</a>
+        <a href="#family">Family</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div>
+        <div class="eyebrow">A life of dedication and dignity</div>
+        <h1>Hafiz Abdullah Khalid Khan <span>Leghari Baloch</span></h1>
+        <p class="hero-copy">A retired Senior Joint Director of the Pakistan Airports Authority, with roots in the historic land of Balochistan and a life shaped by service, family and tradition.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#about">Discover his story</a>
+          <a class="btn btn-outline" href="https://wa.me/923009434298" target="_blank" rel="noopener">Connect on WhatsApp ↗</a>
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <div class="portrait-frame">
+          <div class="portrait">
+            <img id="profileImage" src="profile.jpg" alt="Portrait of Hafiz Abdullah Khalid Khan Leghari Baloch">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="32" cy="21" r="11"></circle><path d="M11 56c2-13 9-20 21-20s19 7 21 20"></path>
+              <path d="M8 8h10M8 8v10M56 8H46M56 8v10M8 56h10M8 56V46M56 56H46M56 56V46" opacity=".55"></path>
+            </svg>
+            <strong>Portrait goes here</strong>
+            <small>Add his photograph as <b>profile.jpg</b></small>
+          </div>
+        </div>
+        <div class="photo-note">PHOTO PLACEHOLDER · REPLACE WITH HIS PICTURE</div>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <div><b>Born</b>19 March 1958</div>
+      <div><b>Birthplace</b>Choti Zehrein</div>
+      <div><b>Profession</b>Retired Senior Joint Director</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="section-heading">
+        <div class="eyebrow">Personal profile</div>
+        <h2>Rooted in heritage. Defined by service.</h2>
+        <p>A personal introduction honouring his background, professional journey and family roots.</p>
+      </div>
+      <div class="about-grid">
+        <div class="quote-panel">
+          <div class="quote-mark">“</div>
+          <p>True distinction is found in a life of commitment, humility and respect for one's roots.</p>
+          <small>Family values · Heritage · Service</small>
+        </div>
+        <div class="bio-text">
+          <p>Hafiz Abdullah Khalid Khan Leghari Baloch was born on 19 March 1958 in Choti Zehrein. His family roots are connected to the Leghari Baloch heritage, and his permanent address is in Raheema Baad, Tehsil Sadiqabad, District Rahim Yar Khan.</p>
+          <p>He served as a Senior Joint Director with the Pakistan Airports Authority and is now retired. This profile celebrates his life, his professional service and the cultural heritage that forms an important part of his identity.</p>
+          <div class="details">
+            <div class="detail"><small>Full name</small><strong>Hafiz Abdullah Khalid Khan Leghari Baloch</strong></div>
+            <div class="detail"><small>Date of birth</small><strong>19 March 1958</strong></div>
+            <div class="detail"><small>Place of birth</small><strong>Choti Zehrein</strong></div>
+            <div class="detail"><small>Permanent address</small><strong>Raheema Baad, Tehsil Sadiqabad, District Rahim Yar Khan</strong></div>
+            <div class="detail"><small>Professional status</small><strong>Retired</strong></div>
+            <div class="detail"><small>Former position</small><strong>Senior Joint Director, Pakistan Airports Authority</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="career" id="career">
+    <div class="career-inner">
+      <div>
+        <div class="eyebrow">Professional journey</div>
+        <h2>Service with responsibility</h2>
+        <p>A career in public service is built through consistency, responsibility and dedication. His professional chapter included service with Pakistan's aviation authority.</p>
+      </div>
+      <div class="career-card">
+        <small>Career highlight</small>
+        <h3>Pakistan Airports Authority</h3>
+        <p><strong>Former designation:</strong> Senior Joint Director<br><strong>Status:</strong> Retired</p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section id="heritage">
+      <div class="heritage-intro">
+        <div class="section-heading">
+          <div class="eyebrow">The land of Balochistan</div>
+          <h2>A heritage rich in history and natural beauty</h2>
+          <p>Balochistan is known for its ancient archaeological sites, striking landscapes, traditional craftsmanship, poetry and music. Here are a few highlights of its remarkable heritage.</p>
+        </div>
+      </div>
+      <div class="heritage-grid">
+        <article class="heritage-card">
+          <div class="number">01 / ANCIENT HISTORY</div>
+          <h3>Mehrgarh</h3>
+          <p>One of South Asia's earliest known farming settlements, with archaeological remains dating to around 7000 BCE.</p>
+        </article>
+        <article class="heritage-card">
+          <div class="number">02 / LANDSCAPE</div>
+          <h3>Hingol National Park</h3>
+          <p>A remarkable natural landscape featuring rugged mountains, unusual rock formations, mud volcanoes and coastal scenery.</p>
+        </article>
+        <article class="heritage-card">
+          <div class="number">03 / CRAFTSMANSHIP</div>
+          <h3>Balochi Embroidery</h3>
+          <p>Recognised for intricate geometric patterns, detailed handwork and colourful designs passed down through generations.</p>
+        </article>
+        <article class="heritage-card">
+          <div class="number">04 / MUSIC & POETRY</div>
+          <h3>Living Traditions</h3>
+          <p>Balochistan's cultural expression includes folk poetry, storytelling and traditional instruments such as the saroz and dambura.</p>
+        </article>
+        <article class="heritage-card">
+          <div class="number">05 / NATURAL HERITAGE</div>
+          <h3>Ziarat Juniper Forest</h3>
+          <p>The Ziarat region is celebrated for its ancient juniper woodlands and peaceful mountain scenery.</p>
+        </article>
+        <article class="heritage-card">
+          <div class="number">06 / COASTAL BEAUTY</div>
+          <h3>Makran Coast</h3>
+          <p>A dramatic stretch along the Arabian Sea, known for its beaches, cliffs, fishing communities and scenic coastal routes.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="family" id="family">
+    <div class="family-inner">
+      <div class="section-heading">
+        <div class="eyebrow">Family</div>
+        <h2>A family-centred life</h2>
+        <p>Family is an important part of every personal story. This profile respectfully recognises his immediate family.</p>
+      </div>
+      <div class="family-card">
+        <div class="family-item">
+          <small>Children</small>
+          <h3>One daughter & one son</h3>
+        </div>
+        <div class="family-item">
+          <small>Son</small>
+          <h3>M. Usman Akbar Khan Leghari Baloch</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section id="contact">
+      <div class="contact">
+        <div>
+          <div class="eyebrow">Get in touch</div>
+          <h2>Connect through WhatsApp</h2>
+          <p>For a direct message, use the WhatsApp contact below.</p>
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/923009434298" target="_blank" rel="noopener">Message on WhatsApp ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> Hafiz Abdullah Khalid Khan Leghari Baloch · Personal Profile</footer>
+
+  <a class="whatsapp" href="https://wa.me/923009434298" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.02 3C8.85 3 3.02 8.82 3.02 15.99c0 2.29.6 4.52 1.74 6.48L3 29l6.7-1.72a13 13 0 0 0 6.31 1.61h.01c7.16 0 13-5.83 13-13A12.92 12.92 0 0 0 16.02 3zm0 23.7h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-3.98 1.04 1.06-3.88-.26-.4a10.7 10.7 0 0 1-1.65-5.73C5.28 10.06 10.1 5.25 16.03 5.25a10.72 10.72 0 0 1 10.72 10.72c0 5.93-4.82 10.73-10.73 10.73zm5.9-8.04c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.51-.16-.72.16-.21.32-.83 1.05-1.02 1.27-.19.21-.38.24-.7.08-.32-.16-1.35-.5-2.57-1.6-.95-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.68s1.16 3.1 1.32 3.31c.16.21 2.28 3.48 5.53 4.88.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37z"/></svg>
+  </a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // If profile.jpg exists beside index.html, show it automatically.
+    const profileImage = document.getElementById("profileImage");
+    profileImage.addEventListener("load", () => {
+      profileImage.style.display = "block";
+      profileImage.parentElement.querySelector("svg").style.display = "none";
+      profileImage.parentElement.querySelector("strong").style.display = "none";
+      profileImage.parentElement.querySelector("small").style.display = "none";
+    });
+    profileImage.addEventListener("error", () => {
+      profileImage.style.display = "none";
+    });
+  </script>
+</body>
+</html>
